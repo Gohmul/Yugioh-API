@@ -8,9 +8,9 @@
 
 ### what they think of the project
 
-### component heirarchy diagram - https://app.diagrams.net/#G1h_4bdarqZvwFhNAbOEIc4OFa87UfTs3J
-
 ### api - https://ygoprodeck.com/api-guide/
+
+### component heirarchy diagram - https://app.diagrams.net/#G1h_4bdarqZvwFhNAbOEIc4OFa87UfTs3J
 
 ### main page - https://wireframe.cc/Ocb60H
 
