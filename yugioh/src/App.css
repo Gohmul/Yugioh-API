@@ -1,0 +1,49 @@
+a {
+  text-decoration:none;
+  color: red;
+}
+
+a:hover {
+  color: rgb(185, 59, 59);
+text-decoration:underline;
+  }
+
+.App {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.nav-item {
+  font-size: 88px;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color:white;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  background-image: url("components/yugioh1.jpeg");
+  width: 100vw;
+  height: fit-content;
+}
+
+.header-text {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style:italic;
+  font-size: 200px;
+  color: red;
+  opacity: 65%;
+  height: 300px;
+}
