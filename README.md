@@ -2,11 +2,7 @@
 
 ### My idea is to make a simple card info page with
 
-### you need to know about the card and to have a
-
-### feedback page where people can leave comments on
-
-### what they think of the project
+### the imformation you need to know about any card and to have a feedback page where people can leave comments on what they think of the project
 
 ### api - https://ygoprodeck.com/api-guide/
 
