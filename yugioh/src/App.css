@@ -1,49 +1,141 @@
+
 a {
   text-decoration:none;
-  color: red;
-}
+  color:white;}
 
-a:hover {
-  color: rgb(185, 59, 59);
-text-decoration:underline;
+  a:hover {
+  color: #444444;
+  text-decoration:underline;
+  }
+
+  li {
+    list-style: none;
   }
 
 .App {
   text-align: center;
 }
+.App-main {
+  position: absolute;
+  margin-top: 372px;
+}
 
 .nav {
+  padding-bottom: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  position: static;
   padding-left: 100px;
   padding-right: 100px;
 }
 
 .nav-item {
-  font-size: 88px;
   display: flex;
   list-style: none;
   text-decoration: none;
   color:white;
+  background: linear-gradient(#e06666, red 50%, #e06666);
+  border: 1px solid #d0e210;
+  border-radius: 1000px;
+  box-shadow: 0 1px #444444;
+  padding: 20px 45px;
+  font-size: 26px;
+  text-align: center;
 }
+
+.nav-item:hover {
+  transform: scale(1.05);
+}
+
 .header {
+  position: absolute;
   display: flex;
   flex-direction: column;
   background-image: url("components/yugioh1.jpeg");
+  background-size:  100vw 560px ;
   width: 100vw;
   height: fit-content;
 }
 
 .header-text {
-  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style:italic;
   font-size: 200px;
   color: red;
   opacity: 65%;
-  height: 300px;
+}
+
+.home {
+  font-size: 200px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  grid-gap: 5em;
+  padding: 2em;
+}
+.card  {
+  width: 100%;
+  height: 20em;
+  object-fit: center;
+  box-shadow: inset 0 0 1em rgb(11, 38, 191);
+}
+.card:hover {
+  transform: scale(1.1);
+  border: #d0e210 solid 1px;
+
+}
+.card-name {
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 16px;
+}
+.card-img {
+  margin-top: 2em;
+  height: 200px;
+  width: auto;
+}
+
+.search-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+display: flex;
+justify-content: center;
+}
+
+.search-input {
+  width: 25%;
+  border: 3px solid #07ac5f;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-input:focus{
+  color: #07ac5f;
+}
+
+.search-Button {
+  width: 80px;
+  height: 36px;
+  border: 1px solid #07ac5f;
+  background: #07ac5f;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.error {
+  font-size: 1000px;
 }
