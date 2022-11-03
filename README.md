@@ -6,7 +6,7 @@
 
 ### feedback page where people can leave comments on
 
-### what they think of they project
+### what they think of the project
 
 ### component heirarchy diagram - https://app.diagrams.net/#G1h_4bdarqZvwFhNAbOEIc4OFa87UfTs3J
 
