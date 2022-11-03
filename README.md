@@ -10,6 +10,8 @@
 
 ### component heirarchy diagram - https://app.diagrams.net/#G1h_4bdarqZvwFhNAbOEIc4OFa87UfTs3J
 
+### api - https://ygoprodeck.com/api-guide/
+
 ### main page - https://wireframe.cc/Ocb60H
 
 ### card list page - https://wireframe.cc/NX0U1O
