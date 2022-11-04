@@ -16,7 +16,7 @@ import { attributes } from "./globals";
 }, []) 
 
 const loadData = () => {
-    data.setLoad((prev) => prev + 10)
+    data.setLoad((prev) => prev + 50)
   }
 const handleAttributes = (e) => {
     data.setAttributes({[e.target.id]: e.target.value });
@@ -66,8 +66,8 @@ const handleAttributes = (e) => {
     } else {         
         return (
                     <div className="page-context">
-                    <div className="search-bar">
-                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
+                    <div className="search-bar">  {/*                                                                            onKeyUp={getApi} */}
+                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)} ></input>
                     <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.resetSearch())}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
@@ -110,7 +110,7 @@ const handleAttributes = (e) => {
         </div>
         <div className="load-more-container">
         {   
-             data.load < data.cards.length && <button className="load-more"onClick={loadData}>Load more...</button>
+             data.load < data.cards.length && <button className="load-more"onClick={loadData}>Load more</button>
             }
             </div>
         </div>
