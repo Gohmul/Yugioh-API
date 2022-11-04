@@ -11,11 +11,11 @@ export default function Nav () {
           <button className="nav-item">
               <Link to ="/cards">Cards</Link>
           </button>
-          {/* <button className="nav-item">
+          <button className="nav-item">
               <Link onClick={() => navigate(-1)}>
                   Back
               </Link>
-          </button> */}
+          </button>
         </div>
     )
 }
