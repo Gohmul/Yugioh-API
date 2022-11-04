@@ -3,7 +3,6 @@ import Home from "./Home";
 import CardList from "./CardList";
 import CardInfo from "./CardInfo";
 import { useState } from "react";
-import { useContext } from "react";
 import { DataContext } from "./DataContext";
 export default function Main () {
     const initialAttribute = {
@@ -19,6 +18,8 @@ export default function Main () {
     const [card, setCard] = useState("")
     const [apiData, setData] = useState([]);
     const [load, setLoad] = useState(50);
+
+    
     return(
         <div className="App-main">
                 <DataContext.Provider value={{apiData, setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>

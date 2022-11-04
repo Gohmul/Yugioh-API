@@ -11,14 +11,10 @@ import { attributes } from "./globals";
         let navigate = useNavigate()
 
     useEffect(() => { 
-        getAPI();
+        getApi();
 
 }, []) 
-            const getAPI = async () => {
-            const response = await axios.get(`${API_URL}`)
-            data.setCards(response.data.data)
-            data.setData(response.data)
-            }
+
 const loadData = () => {
     data.setLoad((prev) => prev + 10)
   }
@@ -29,7 +25,7 @@ const handleAttributes = (e) => {
     data.setTypes({[e.target.id]: e.target.value });
   };
 
-        const getFuzzy = async () => {
+        const getApi = async () => {
             if (data.search === ""){
                 try {
                 const response = await axios.get(`${API_URL}${data.attributes.value}${data.types.value}`)
@@ -64,7 +60,7 @@ const handleAttributes = (e) => {
    }
         console.log("Attribute: "+ data.attributes.value)
         console.log("Type: "+data.types.value)
-        console.log("Completed URL: "+`${API_URL}${data.attributes.value}${data.types.value}`)
+        console.log("Completed URL: "+`${API_URL}${fuzzy}${data.attributes.value}${data.types.value}`)
     if (!data.cards) {
         return <h2>Loading please wait.</h2>
     } else {         
@@ -72,7 +68,7 @@ const handleAttributes = (e) => {
                     <div className="page-context">
                     <div className="search-bar">
                     <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
-                    <button className="search-Button"type="submit" onClick={getFuzzy} >Search</button>
+                    <button className="search-Button"type="submit" onClick={getApi} >Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
                     <option value="">None</option>
@@ -103,7 +99,7 @@ const handleAttributes = (e) => {
                     {
                         data.cards.slice(0,data.load).map((card) => (
                     <div className="card-container">
-                        <li key={data.card.id} className="card" onMouseUp={showCard} onMouseDown={((e)=>data.setCard(card))}  >
+                        <li key={data.card.id} className="card" onMouseUp={showCard} onMouseDown={((e)=>data.setCard(card))}>
                             <img className="card-img" src={card.card_images[0].image_url} />
                             <h1 className="card-name">{card.name}</h1>
                         </li>

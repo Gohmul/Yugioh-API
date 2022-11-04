@@ -6,7 +6,7 @@ import CardList from "./CardList";
 
 export default function CardInfo () {
 const data = useContext(DataContext)
-    return  (
+    return (
         <div className="card-detail-container">
             <div className="card-detail-main">
                 <h2>{data.card.name}</h2>
