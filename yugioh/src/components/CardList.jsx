@@ -74,7 +74,17 @@ const handleAttributes = (e) => {
                     <option value="" hidden>Select a Type</option>
                     <option value="&type=Normal%20Monster">Normal Monster</option>
                     <option value="&type=Effect%20Monster" >Effect Monster</option>
+                    <option value="&type=Gemini%20Monster">Gemini Monster</option>
+                    <option value="&type=Ritual%20Monster">Ritual Monster</option>
+                    <option value="&type=Spirit%20Monster">Spirit Monster</option>
+                    <option value="&type=Toon%20Monster">Toon Monster</option>
+                    <option value="&type=Tuner%20Monster">Tuner Monster</option>
+
+
+
+
                     <option value="&type=Trap%20Card">Trap Card</option>
+                    <option value="&type=Skill%20Card">Skill Card</option>
                     <option value="&type=Spell%20Card" >Spell Card</option>
                     </select>
                     <select onChange={handleAttributes} id={"value"} onSelect={((e)=> data.setAttributes(e.target.value))} >
