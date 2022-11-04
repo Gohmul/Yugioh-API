@@ -111,7 +111,7 @@ const handleAttributes = (e) => {
                         data.cards.map((card) => (
                     <div className="card-container">
                         <li key={card.id} className="card" onClick={showCard}>
-                            {/* <img className="card-img" src={card.card_images[0].image_url} /> */}
+                            <img className="card-img" src={card.card_images[0].image_url} />
                             <h1 className="card-name">{card.name}</h1>
                         </li>
                     </div>
