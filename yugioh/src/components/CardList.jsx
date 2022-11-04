@@ -8,28 +8,11 @@ import { fuzzy } from "./globals";
 import { attributes } from "./globals";
     export default function CardList() {
         let data = useContext(DataContext)
-        
-            
-        
-// const initialAttribute = {
-//     value:"",
-// }
-// const initialType = {
-//     value:"",
-// }
-//     const [cards, setCards] = useState([]);
-//     const [search, setSearch] = useState("")
-//     const [attributes, setAttributes] = useState(initialAttribute)
-//     const [types, setTypes] = useState(initialType)
-//     const [values, setValues] = useState("")
-
-
-    let navigate = useNavigate()
+        let navigate = useNavigate()
 
     useEffect(() => {
          const getAPI = async () => {
             const response = await axios.get(`${API_URL}`) 
-       // console.log(response.data.data) 
          data.setCards(response.data.data)
          
     }   
@@ -74,18 +57,14 @@ const handleAttributes = (e) => {
 }
 
    const showCard = () => {
-       const show = data.cards.map((card) => {
-           navigate(`${card.id}`)
-       }) 
-}        
-        // console.log(search)
+       navigate(`${data.card.id}`)
+   }
         console.log("Attribute: "+ data.attributes.value)
         console.log("Type: "+data.types.value)
         console.log("Completed URL: "+`${API_URL}${data.attributes.value}${data.types.value}`)
     if (!data.cards) {
         return <h2>Loading please wait.</h2>
     } else {         
-
         return (
                     <div className="page-context">
                     <div className="search-bar">
@@ -93,9 +72,10 @@ const handleAttributes = (e) => {
                     <button className="search-Button"type="submit" onClick={getFuzzy} >Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
-                    <option value="&type=Normal Monster">Monster Card</option>
-                    <option value="&type=Trap Card">Trap Card</option>
-                    <option value="&type=Spell Card" >Spell Card</option>
+                    <option value="&type=Normal%20Monster">Monster Card</option>
+                    <option value="&type=Effect%20Monster" >Effect Monster</option>
+                    <option value="&type=Trap%20Card">Trap Card</option>
+                    <option value="&type=Spell%20Card" >Spell Card</option>
                     </select>
                     <select onChange={handleAttributes} id={"value"} onSelect={((e)=> data.setAttributes(e.target.value))} >
                     <option value="" hidden>Select an Attribute</option>
@@ -110,12 +90,14 @@ const handleAttributes = (e) => {
                     {
                         data.cards.map((card) => (
                     <div className="card-container">
-                        <li key={card.id} className="card" onClick={showCard}>
+                        <li key={data.card.id} className="card" onClickCapture={((e)=>data.setCard(card))} onClick={showCard}  >
                             <img className="card-img" src={card.card_images[0].image_url} />
                             <h1 className="card-name">{card.name}</h1>
                         </li>
                     </div>
                 ))
+
+                
             }
         </div>
         </div>

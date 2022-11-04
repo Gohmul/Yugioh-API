@@ -17,9 +17,10 @@ export default function Main () {
     const [attributes, setAttributes] = useState(initialAttribute)
     const [types, setTypes] = useState(initialType)
     const [values, setValues] = useState("")
+    const [card, setCard] = useState("")
     return(
         <div className="App-main">
-                <DataContext.Provider value={{cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
+                <DataContext.Provider value={{card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
                 <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/cards" element={<CardList/>} />

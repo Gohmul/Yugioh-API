@@ -7,25 +7,25 @@ import CardList from "./CardList";
 
 export default function CardInfo () {
 const data = useContext(DataContext)
-console.log(data)
 
-    const [card, setCard] = useState([]);
-
-    let { id } = useParams();
-
-    useEffect(() => {
-        let selectedCard = data.cards.find(
-            (card) => card.id === parseInt(id)
-        )
-        setCard(selectedCard)
-    },[card,id])
-
-    return card ? (
+    return  (
         <div className="card-detail-container">
             <div className="card-detail-main">
-                <h2>{card.name}</h2>
-                {/* <img src={card.card_images[0].image_url} /> */}
+                <h2>{data.card.name}</h2>
+                <img src={data.card.card_images[0].image_url} onClick={console.log(data.card)}/>
+                <h4>Attribute: {data.card.attribute}</h4>
+                <h4>Type: {data.card.type}</h4>
+                <h4>Race: {data.card.race}</h4>
             </div>
+            <div className="card-desc">
+                                <p>{data.card.desc}</p>
+                            </div>
+                            <div className="card-worth">
+                            <h4>Card Market Price: {data.card.card_prices[0].cardmarket_price}</h4>
+                            <h4>TCG Player Market Price: {data.card.card_prices[0].tcgplayer_price}</h4>
+                            <h4>Amazon Price: {data.card.card_prices[0].amazon_price}</h4>
+                            <h4>Cool Stuff inc. Price: {data.card.card_prices[0].coolstuffinc_price}</h4>
+                            </div>
         </div>
-    ) : null;
+    ) 
 }
