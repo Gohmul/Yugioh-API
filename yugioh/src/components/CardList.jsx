@@ -72,15 +72,17 @@ const handleAttributes = (e) => {
                     <button className="search-Button"type="submit" onClick={getFuzzy} >Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
-                    <option value="&type=Normal%20Monster">Monster Card</option>
+                    <option value="&type=Normal%20Monster">Normal Monster</option>
                     <option value="&type=Effect%20Monster" >Effect Monster</option>
                     <option value="&type=Trap%20Card">Trap Card</option>
                     <option value="&type=Spell%20Card" >Spell Card</option>
                     </select>
                     <select onChange={handleAttributes} id={"value"} onSelect={((e)=> data.setAttributes(e.target.value))} >
                     <option value="" hidden>Select an Attribute</option>
-                    <option value="&attrbiute=water" >Water</option>
+                    <option value="&attrbiute=water">Water</option>
                     <option value="&attribute=light">Light</option>
+                    <option value="&attribute=divine">Divine</option>
+                    <option value="&attribute=wind">Wind</option>
                     <option value="&attribute=fire">Fire</option>
                     <option value="&attribute=earth">Earth</option>
                     <option value="&attribute=dark">Dark</option>
