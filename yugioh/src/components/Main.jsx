@@ -18,7 +18,7 @@ export default function Main () {
     const [types, setTypes] = useState(initialType)
     const [card, setCard] = useState("")
     const [apiData, setData] = useState([]);
-    const [load, setLoad] = useState(10);
+    const [load, setLoad] = useState(50);
     return(
         <div className="App-main">
                 <DataContext.Provider value={{apiData, setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
