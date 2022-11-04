@@ -14,6 +14,9 @@ a {
 
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 .App-main {
   position: absolute;
@@ -53,9 +56,8 @@ a {
   display: flex;
   flex-direction: column;
   background-image: url("components/yugioh1.jpeg");
-  background-size:  100vw 560px ;
-  width: 100vw;
   height: fit-content;
+  width: 100vw;
 }
 
 .header-text {
@@ -79,7 +81,7 @@ a {
   grid-template-columns: repeat(5, minmax(100px, 1fr));
   grid-gap: 2em;
   padding: 2em;
-  width: 100vw;
+
 }
 .card  {
   width: 100%;
