@@ -10,15 +10,18 @@ import { attributes } from "./globals";
         let data = useContext(DataContext)
         let navigate = useNavigate()
 
-    useEffect(() => {
-         const getAPI = async () => {
-            const response = await axios.get(`${API_URL}`) 
-         data.setCards(response.data.data)
-         
-    }   
-    getAPI();
-}, [])
+    useEffect(() => { 
+        getAPI();
 
+}, []) 
+            const getAPI = async () => {
+            const response = await axios.get(`${API_URL}`)
+            data.setCards(response.data.data)
+            data.setData(response.data)
+            }
+const loadData = () => {
+    data.setLoad((prev) => prev + 10)
+  }
 const handleAttributes = (e) => {
     data.setAttributes({[e.target.id]: e.target.value });
   };
@@ -98,20 +101,21 @@ const handleAttributes = (e) => {
                     </div>
                     <div className="card-grid">
                     {
-                        data.cards.map((card) => (
+                        data.cards.slice(0,data.load).map((card) => (
                     <div className="card-container">
                         <li key={data.card.id} className="card" onClickCapture={((e)=>data.setCard(card))} onClick={showCard}  >
                             <img className="card-img" src={card.card_images[0].image_url} />
                             <h1 className="card-name">{card.name}</h1>
                         </li>
                     </div>
-                ))
-
-                
+                )
+                )    
+            }
+            {
+             data.load < data.cards.length && <button className="load-more"onClick={loadData}>Load more...</button>
             }
         </div>
         </div>
     )
 }
 }
-
