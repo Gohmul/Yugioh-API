@@ -103,7 +103,7 @@ const handleAttributes = (e) => {
                     {
                         data.cards.slice(0,data.load).map((card) => (
                     <div className="card-container">
-                        <li key={data.card.id} className="card" onClickCapture={((e)=>data.setCard(card))} onClick={showCard}  >
+                        <li key={data.card.id} className="card" onMouseUp={showCard} onMouseDown={((e)=>data.setCard(card))}  >
                             <img className="card-img" src={card.card_images[0].image_url} />
                             <h1 className="card-name">{card.name}</h1>
                         </li>
