@@ -111,11 +111,14 @@ const handleAttributes = (e) => {
                 )
                 )    
             }
-            {
+        </div>
+        <div className="load-more-container">
+        {   
              data.load < data.cards.length && <button className="load-more"onClick={loadData}>Load more...</button>
             }
+            </div>
         </div>
-        </div>
+        
     )
 }
 }
