@@ -19,10 +19,14 @@ export default function Main () {
     const [apiData, setData] = useState([]);
     const [load, setLoad] = useState(50);
 
-    
+    const resetSearch = () => {
+        setAttributes(initialAttribute)
+        setTypes(initialType)
+        setSearch("")
+    }
     return(
         <div className="App-main">
-                <DataContext.Provider value={{apiData, setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
+                <DataContext.Provider value={{resetSearch ,apiData, setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
                 <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/cards" element={<CardList/>} />

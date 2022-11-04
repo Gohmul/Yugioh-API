@@ -60,7 +60,7 @@ const handleAttributes = (e) => {
    }
         console.log("Attribute: "+ data.attributes.value)
         console.log("Type: "+data.types.value)
-        console.log("Completed URL: "+`${API_URL}${fuzzy}${data.attributes.value}${data.types.value}`)
+        console.log("Completed URL: "+`${API_URL}${fuzzy}${data.search}${data.attributes.value}${data.types.value}`)
     if (!data.cards) {
         return <h2>Loading please wait.</h2>
     } else {         
@@ -68,7 +68,7 @@ const handleAttributes = (e) => {
                     <div className="page-context">
                     <div className="search-bar">
                     <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
-                    <button className="search-Button"type="submit" onClick={getApi} >Search</button>
+                    <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.resetSearch())}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
                     <option value="">None</option>
