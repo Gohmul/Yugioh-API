@@ -25,6 +25,11 @@ const handleAttributes = (e) => {
     data.setTypes({[e.target.id]: e.target.value });
   };
 
+  const backToTop = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
         const getApi = async () => {
             if (data.search === ""){
                 try {
@@ -54,7 +59,13 @@ const handleAttributes = (e) => {
         }
     }
 }
-
+    function showScroll () {
+        return(
+     <div className="scrolldown-container">
+         <button className="scrolldown" style={{display:'block'}}>Scroll Down</button>
+     </div> 
+        )
+    }
    const showCard = () => {
        navigate(`${data.card.id}`)
    }
@@ -67,7 +78,7 @@ const handleAttributes = (e) => {
         return (
                     <div className="page-context">
                     <div className="search-bar">  {/*                                                                            onKeyUp={getApi} */}
-                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)} ></input>
+                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)} onKeyUp={getApi} ></input>
                     <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.resetSearch())}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
@@ -112,7 +123,10 @@ const handleAttributes = (e) => {
         {   
              data.load < data.cards.length && <button className="load-more"onClick={loadData}>Load more</button>
             }
+            <button className="backtotop"onClick={((e)=> document.documentElement.scrollTop = 0)} onScroll={showScroll}>Back to Top</button>
+
             </div>
+            
         </div>
         
     )

@@ -144,8 +144,10 @@ a {
 .load-more-container {
   display: flex;
   justify-content: center;
-  margin-top: 5em;
+  margin-top: 2em;
   margin-bottom: 10em;
+  flex-direction: column;
+  align-items: center;
 }
 
 .load-more {
@@ -156,11 +158,13 @@ a {
   background: linear-gradient(#e06666, red 50%, #e06666);
   border: 1px solid #d0e210;
   border-radius: 1000px;
-  box-shadow: 0 1px #444444;
+  box-shadow: 0 2px #444444;
   padding: 20px 45px;
   font-size: 26px;
   text-align: center;
   justify-content: center;
+  margin-bottom: 3em;
+  width: 350px;
 }
 
 .page-context {
@@ -200,4 +204,19 @@ a {
   font-size:36px;
   color: white;
   -webkit-text-stroke: 1px black;
+}
+
+
+.backtotop {
+  display: flex;
+  color:white;
+  background: linear-gradient(#e06666, red 50%, #e06666);
+  border: 1px solid #d0e210;
+  border-radius: 1000px;
+  box-shadow: 0 2px #444444;
+  padding: 20px 45px;
+  font-size: 26px;
+  text-align: center;
+  justify-content: center;
+  width: 350px;  
 }
