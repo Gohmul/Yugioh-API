@@ -95,7 +95,7 @@ const handleAttributes = (e) => {
                     <option value="&type=Spell%20Card" >Spell Card</option>
                     </select>
                     <select onChange={handleAttributes} id={"value"} onSelect={((e)=> data.setAttributes(e.target.value))} >
-                    <option value="" hidden>Select an Attribute</option>
+                    <option value="" hidden>Select a Attribute</option>
                     <option value="">None</option>
                     <option value="&attrbiute=water">Water</option>
                     <option value="&attribute=light">Light</option>
