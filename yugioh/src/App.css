@@ -17,7 +17,9 @@ a {
 .App-main {
   position: absolute;
   margin-top: 372px;
-  background-color:grey;  
+  background-color:grey;
+  width: 100vw;
+  height: 100vh;
 
 }
 
