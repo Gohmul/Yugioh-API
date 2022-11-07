@@ -6,14 +6,43 @@ import axios from "axios";
 import { API_URL } from "./globals";
 import { fuzzy } from "./globals";
 import { attributes } from "./globals";
+import ReactCardFlip from "react-card-flip"
+import cardBack from "./yugiohcardback.png"
     export default function CardList() {
-        let data = useContext(DataContext)
+        let data = useContext(DataContext)  
+              console.log(data)
+
         let navigate = useNavigate()
 
     useEffect(() => { 
         getApi();
 
 }, []) 
+
+const Card = ({project}) => {
+    return data, {project} ? ( 
+        
+    <ReactCardFlip isFlipped={data.isFlipped} flipDirection="horizontal"> 
+    <div id={data.card.id} className="cardFront" onMouseEnter={((e)=>data.setCard(project))} onMouseUp={showCard} onMouseLeave={((e) => data.setIsFlipped((prev) => !prev))} > 
+    This is the front
+    <li>
+    <img className="card-img" src={project.card_images[0].image_url}></img>
+    <h1 className="card-name">{project.name}</h1>
+    </li>
+    </div>
+<div  className="cardBack" onMouseEnter={((e) => data.setIsFlipped((prev) => !prev))}>
+    this is the back
+    <li>
+<img className="card-img" src={cardBack} />
+    <h1 className="card-name">{project.name}</h1>
+    </li>    
+
+    </div>  
+            </ReactCardFlip>
+
+
+    ) : <h1> Loading please wait...</h1> 
+}
 
 const loadData = () => {
     data.setLoad((prev) => prev + 50)
@@ -67,8 +96,11 @@ const handleAttributes = (e) => {
         )
     }
    const showCard = () => {
-       navigate(`${data.card.id}`)
+        navigate(`${data.card.id}`)
+        console.log(data.card.id)
    }
+
+    
         console.log("Attribute: "+ data.attributes.value)
         console.log("Type: "+data.types.value)
         console.log("Completed URL: "+`${API_URL}${fuzzy}${data.search}${data.attributes.value}${data.types.value}`)
@@ -109,12 +141,8 @@ const handleAttributes = (e) => {
                     <div className="card-grid">
                     {
                         data.cards.slice(0,data.load).map((card) => (
-                    <div className="card-container">
-                        <li key={data.card.id} className="card" onMouseUp={showCard} onMouseDown={((e)=>data.setCard(card))}>
-                            <img className="card-img" src={card.card_images[0].image_url} />
-                            <h1 className="card-name">{card.name}</h1>
-                        </li>
-                    </div>
+                            <Card project={card} key={data.card.id}/>
+
                 )
                 )    
             }

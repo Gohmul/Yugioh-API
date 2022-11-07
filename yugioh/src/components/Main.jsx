@@ -11,13 +11,18 @@ export default function Main () {
     const initialType = {
         value:"",
     }
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState();
     const [search, setSearch] = useState("")
     const [attributes, setAttributes] = useState(initialAttribute)
     const [types, setTypes] = useState(initialType)
     const [card, setCard] = useState("")
     const [apiData, setData] = useState([]);
     const [load, setLoad] = useState(50);
+    const [isFlipped, setIsFlipped] = useState(true);
+    const [indivudalFlip, setIndividualFlip] = useState({
+        value:false
+    })
+
 
     const resetSearch = () => {
         setAttributes(initialAttribute)
@@ -26,7 +31,7 @@ export default function Main () {
     }
     return(
         <div className="App-main">
-                <DataContext.Provider value={{resetSearch ,apiData, setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
+                <DataContext.Provider value={{isFlipped , setIsFlipped , resetSearch , apiData , setData , load , setLoad , card , setCard , cards, setCards, search , setSearch , attributes , setAttributes , types , setTypes}}>
                 <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/cards" element={<CardList/>} />

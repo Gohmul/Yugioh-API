@@ -117,6 +117,7 @@ a {
   width: auto;
 }
 
+
 .search-bar {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -282,7 +283,7 @@ a {
 }
 
 .who-made-desc {
-  font-size: xx-large;
+  font-size: 0px;
   opacity: 0;
   background-color: #d0e210;
 }
@@ -294,6 +295,7 @@ a {
   opacity: 100;
   font-size: 60px;
 }
+
 
 
 
