@@ -78,7 +78,7 @@ const handleAttributes = (e) => {
         return (
                     <div className="page-context">
                     <div className="search-bar">  {/*                                                                            onKeyUp={getApi} */}
-                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)} onKeyUp={getApi} ></input>
+                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
                     <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.resetSearch())}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
