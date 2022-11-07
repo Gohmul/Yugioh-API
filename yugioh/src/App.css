@@ -76,7 +76,10 @@ a {
 }
 
 .home {
-  font-size: 200px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-grid {
@@ -99,7 +102,7 @@ a {
   border: 3px solid black;
 }
 .card:hover {
-  transform: scale(1.15);
+  transform: scale(1.15 );
   border: #e06666 solid 3px;
 }
 .card-name {
@@ -266,3 +269,33 @@ a {
   color: #fff;
   font-size: x-large;
 }
+
+.what-is-desc {
+  font-size: xx-large;
+  opacity: 0;
+}
+
+.what-is:hover + .what-is-desc {
+  color: red;
+  transition: linear 2s; 
+  opacity: 100;
+}
+
+.who-made-desc {
+  font-size: xx-large;
+  opacity: 0;
+  background-color: #d0e210;
+}
+
+.who-made:hover + .who-made-desc {
+  color: red;
+  background-color:grey ;
+  transition: ease-in 3s;
+  opacity: 100;
+  font-size: 60px;
+}
+
+
+
+
+
