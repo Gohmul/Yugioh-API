@@ -20,10 +20,10 @@ const data = useContext(DataContext)
                                 <p><br/>{data.card.desc}</p>
                             </div>
                             <div className="card-worth">
-                            <h4>Card Market Price: {data.card.card_prices[0].cardmarket_price}</h4>
-                            <h4>TCG Player Market Price: {data.card.card_prices[0].tcgplayer_price}</h4>
-                            <h4>Amazon Price: {data.card.card_prices[0].amazon_price}</h4>
-                            <h4>Cool Stuff inc. Price: {data.card.card_prices[0].coolstuffinc_price}</h4>
+                            <h4>Card Market Price:  ${data.card.card_prices[0].cardmarket_price}</h4>
+                            <h4>TCG Player Market Price:  ${data.card.card_prices[0].tcgplayer_price}</h4>
+                            <h4>Amazon Price:  ${data.card.card_prices[0].amazon_price}</h4>
+                            <h4>Cool Stuff inc. Price:  ${data.card.card_prices[0].coolstuffinc_price}</h4>
                             </div>
         </div>
     )
