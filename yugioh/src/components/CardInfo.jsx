@@ -11,12 +11,13 @@ const data = useContext(DataContext)
             <div className="card-detail-main">
                 <h2>{data.card.name}</h2>
                 <img src={data.card.card_images[0].image_url} onClick={console.log(data.card)}/>
-                <h4>Type: {data.card.type}</h4>
-                <h4>Attribute: {data.card.attribute}</h4>
-                <h4>Race: {data.card.race}</h4>
             </div>
             <div className="card-desc">
-                                <p>{data.card.desc}</p>
+            <h4>Type: {data.card.type}</h4>
+                <h4>Attribute: {data.card.attribute}</h4>
+                <h4>Race: {data.card.race}</h4>
+                                
+                                <p><br/>{data.card.desc}</p>
                             </div>
                             <div className="card-worth">
                             <h4>Card Market Price: {data.card.card_prices[0].cardmarket_price}</h4>
