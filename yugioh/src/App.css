@@ -80,6 +80,17 @@ a {
   justify-content: center;
   height: 3em;
 }
+.nav-item {
+  box-shadow:
+  0 0 7px #675988,
+  0 0 10px #675988,
+  0 0 21px #675988,
+  0 0 0px #965A8D,
+  0 0 0px #965A8D,
+  0 0 0px #965A8D,
+  0 0 40px #965A8D,
+  0 0 40px #965A8D;
+}
 
 .nav-item:hover {
   transform: scale(1.05);
@@ -104,7 +115,7 @@ a {
   font-family:fantasy;
   font-style:italic;
   font-size: 155px;
-  color: #C25B80;
+  color: #da6e83;
   text-shadow:
   0 0 7px #675988,
   0 0 10px #675988,
