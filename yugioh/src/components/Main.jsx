@@ -11,8 +11,10 @@ export default function Main () {
     const initialType = {
         value:"",
     }
+    const initialSearch = ""
+ 
     const [cards, setCards] = useState();
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState(initialSearch)
     const [attributes, setAttributes] = useState(initialAttribute)
     const [types, setTypes] = useState(initialType)
     const [card, setCard] = useState("")

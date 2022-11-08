@@ -5,15 +5,15 @@ export default function Nav () {
     let navigate = useNavigate()
     return(
         <div className="nav">
-          <button  className="nav-item" onClick={() => navigate("/")}>
-            <Link to="/">Home</Link>
+          <button  className="nav-home nav-item" onClick={() => navigate("/")}>
+            <Link to="/"></Link>
           </button>
-          <button  className="nav-item" onClick={() => navigate("/cards")}>
-              <Link to ="/cards">Cards</Link>
+          <button  className="nav-cards nav-item" onClick={() => navigate("/cards")}>
+              <Link to ="/cards"></Link>
           </button>
-          <button  className="nav-item" onClick={() => navigate(-1)}>
+          <button  className="nav-back nav-item" onClick={() => navigate(-1)}>
               <Link onClick={() => navigate(-1)}>
-                  Back
+                  
               </Link>
           </button>
         </div>

@@ -7,7 +7,7 @@ import { API_URL } from "./globals";
 import { fuzzy } from "./globals";
 import { attributes } from "./globals";
 import ReactCardFlip from "react-card-flip"
-import cardBack from "./yugiohcardback.png"
+import cardBack from "../photos/yugiohcardback.png"
 
     export default function CardList() {
         let data = useContext(DataContext)  
@@ -53,6 +53,9 @@ const handleAttributes = (e) => {
   };
   const handleTypes = (e) => {
     data.setTypes({[e.target.id]: e.target.value });
+  };
+  const handleSearch = (e) => {
+    data.setSearch({...data.search,[e.target.id]: e.target.value });
   };
 
   const backToTop = () => {
@@ -112,7 +115,7 @@ const handleAttributes = (e) => {
                     <div className="page-context">
                     <div className="search-bar">  {/*                                                                            onKeyUp={getApi} */}
                     <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
-                    <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.resetSearch())}>Search</button>
+                    <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.setSearch(""))}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
                     <option value="">None</option>

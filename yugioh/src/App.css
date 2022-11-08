@@ -19,7 +19,7 @@ a {
   margin-top: 372px;
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  background-color: #415374;
 }
 
 .nav {
@@ -32,16 +32,49 @@ a {
   padding-right: 100px;
 }
 
-.nav-item {
+.nav-home {
   display: flex;
   list-style: none;
   text-decoration: none;
   color:white;
-  background: linear-gradient(#e06666, red 50%, #e06666);
-  border: 3px solid red;
+  background: url("photos/home.png");
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #C25B80;
   border-radius: 1000px;
   padding: 20px 45px;
-  font-size: 26px;
+  text-align: center;
+  width: 10em;
+  justify-content: center;
+  height: 3em;
+}
+.nav-cards {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color:white;
+  background: url("photos/cards.png");
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #C25B80;
+  border-radius: 1000px;
+  padding: 20px 45px;
+  text-align: center;
+  width: 10em;
+  justify-content: center;
+  height: 3em;
+}
+.nav-back {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color:white;
+  background: url("photos/back.png");
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #C25B80;
+  border-radius: 1000px;
+  padding: 20px 45px;
   text-align: center;
   width: 10em;
   justify-content: center;
@@ -58,21 +91,29 @@ a {
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-image: url("components/yugioh1.jpeg");
-  height: fit-content;
+  background-image: url("photos/yugioh1.jpeg");
+  height: 100%;
   width: 100vw;
 }
 
 .header-text {
   display: flex;
   justify-content: center;
+  padding-top: .3em;
   align-items: center;
-  padding-bottom: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:fantasy;
   font-style:italic;
-  font-size: 200px;
-  color: red;
-  opacity: 65%;
+  font-size: 155px;
+  color: #C25B80;
+  text-shadow:
+  0 0 7px #675988,
+  0 0 10px #675988,
+  0 0 21px #675988,
+  0 0 42px #965A8D,
+  0 0 82px #965A8D,
+  0 0 92px #965A8D,
+  0 0 102px #965A8D,
+  0 0 151px #965A8D;
 }
 
 .home {
@@ -96,23 +137,23 @@ a {
   }
 
 .CardBack  {
-  width: 75%;
+  width: 100%;
   height: initial;
   object-fit: center;
   box-shadow: inset 0 0 3em #e06666;
   padding-bottom: 2em;
   border: 3px solid black;
-  border-radius: 100px;
+  border-radius: 40px;
 
 }
 .CardFront  {
-  width: 75%;
+  width: 100%;
   height: initial;
   object-fit: center;
   box-shadow: inset 0 0 3em #e06666;
   padding-bottom: 2em;
   border: 3px solid black;
-  border-radius: 100px;
+  border-radius: 40px;
 }
 
 
@@ -161,6 +202,9 @@ a {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
     grid-gap: 2em;
   }
+  .header-text {
+    font-size: 100px;
+  }
 }
 
 
@@ -182,13 +226,13 @@ a {
 }
 
 .search-input:focus{
-  color: red;
+  color: #C25B80;
 }
 
 .search-Button {
   width: 80px;
   height: 36px;
-  border: 1px solid red;
+  border: 1px solid #C25B80;
   background: #e06666;
   text-align: center;
   color: #fff;
@@ -211,8 +255,8 @@ a {
   list-style: none;
   text-decoration: none;
   color:white;
-  background: linear-gradient(#e06666, red 50%, #e06666);
-  border: 3px solid red;
+  background: linear-gradient(#e06666, #C25B80 50%, #e06666);
+  border: 3px solid #C25B80;
   border-radius: 1000px;
   padding: 20px 45px;
   font-size: 26px;
@@ -225,7 +269,7 @@ a {
 .page-context {
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  background-color: #415374;
 
 }
 
@@ -244,7 +288,7 @@ a {
   justify-content:left;
   padding-left: 50px;
   padding-right:50px;
-  background-image: linear-gradient(#e06666, red);
+  background-image: linear-gradient(#e06666, #C25B80);
   align-items: center;
   border-bottom: 2px solid black;
   height: 50px;
@@ -268,8 +312,8 @@ a {
   list-style: none;
   text-decoration: none;
   color:white;
-  background: linear-gradient(#e06666, red 50%, #e06666);
-  border: 3px solid red;
+  background: linear-gradient(#e06666, #C25B80 50%, #e06666);
+  border: 3px solid #C25B80;
   border-radius: 1000px;
   padding: 20px 45px;
   font-size: 26px;
@@ -280,11 +324,13 @@ a {
 }
 
 .backtotop:hover {
-  border: 3px solid #d0e210;
+  border: 3px solid #C25B80;
+  transform: scale(1.05);
 }
 
 .load-more:hover {
-  border: 3px solid #d0e210;
+  border: 3px solid #C25B80 ;
+  transform: scale(1.05);
 }
 
 
@@ -323,7 +369,7 @@ a {
 }
 
 .what-is:hover + .what-is-desc {
-  color: red;
+  color: #C25B80;
   transition: linear 2s; 
   opacity: 100;
 }
@@ -335,8 +381,8 @@ a {
 }
 
 .who-made:hover + .who-made-desc {
-  color: red;
-  background-color:grey ;
+  color: #C25B80;
+  background-color:#415374 ;
   transition: ease-in 1s;
   opacity: 100;
   font-size: 60px;
