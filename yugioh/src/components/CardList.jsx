@@ -26,13 +26,13 @@ const Card = ({project}) => {
     return data, {project} ? ( 
         
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal"> 
-    <div id={data.card.id} className="CardFront" onMouseDown={((e)=>data.setCard(project))} onClickCapture={showCard} onMouseLeave={((e) => setIsFlipped((prev) => !prev))} > 
+    <div id={data.card.id} className="CardFront"  onMouseUp={showCard} onMouseLeave={((e) => setIsFlipped((prev) => !prev))} > 
     <li className="card">
     <img className="card-img" src={project.card_images[0].image_url}></img>
     <h1 className="card-name">{project.name}</h1>
     </li>
     </div>
-<div  className="CardBack" onMouseEnter={((e) => setIsFlipped((prev) => !prev))}>
+<div  className="CardBack" onClick={((e) => setIsFlipped((prev) => !prev))} onMouseEnter={((e)=>data.setCard(project))}>
     <li className="card">
 <img className="card-img" src={cardBack} />
     <h1 className="card-name">{project.name}</h1>
