@@ -8,6 +8,7 @@ import { fuzzy } from "./globals";
 import { attributes } from "./globals";
 import ReactCardFlip from "react-card-flip"
 import cardBack from "./yugiohcardback.png"
+
     export default function CardList() {
         let data = useContext(DataContext)  
               console.log(data)
@@ -20,19 +21,19 @@ import cardBack from "./yugiohcardback.png"
 }, []) 
 
 const Card = ({project}) => {
+    const [isFlipped, setIsFlipped] = useState(true);
+
     return data, {project} ? ( 
         
-    <ReactCardFlip isFlipped={data.isFlipped} flipDirection="horizontal"> 
-    <div id={data.card.id} className="cardFront" onMouseEnter={((e)=>data.setCard(project))} onMouseUp={showCard} onMouseLeave={((e) => data.setIsFlipped((prev) => !prev))} > 
-    This is the front
-    <li>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal"> 
+    <div id={data.card.id} className="CardFront" onClick={((e)=>data.setCard(project))} onClickCapture={showCard} onMouseLeave={((e) => setIsFlipped((prev) => !prev))} > 
+    <li className="card">
     <img className="card-img" src={project.card_images[0].image_url}></img>
     <h1 className="card-name">{project.name}</h1>
     </li>
     </div>
-<div  className="cardBack" onMouseEnter={((e) => data.setIsFlipped((prev) => !prev))}>
-    this is the back
-    <li>
+<div  className="CardBack" onMouseEnter={((e) => setIsFlipped((prev) => !prev))}>
+    <li className="card">
 <img className="card-img" src={cardBack} />
     <h1 className="card-name">{project.name}</h1>
     </li>    
@@ -140,8 +141,8 @@ const handleAttributes = (e) => {
                     </div>
                     <div className="card-grid">
                     {
-                        data.cards.slice(0,data.load).map((card) => (
-                            <Card project={card} key={data.card.id}/>
+                        data.cards.slice(0,data.load).map((card,index) => (
+                            <Card project={card} key={`card-${index}`}/>
 
                 )
                 )    
