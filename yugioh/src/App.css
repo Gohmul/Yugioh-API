@@ -193,7 +193,7 @@ a {
   width: auto;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:1000px) {
   .card-img{
     height:100px
   }
