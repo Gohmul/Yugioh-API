@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom"
 import { Navigate, useNavigate } from "react-router"
+import { useContext } from "react"
+import { DataContext } from "./DataContext"
 
 export default function Nav () {
+    let data = useContext(DataContext)
     let navigate = useNavigate()
+    
     return(
         <div className="nav">
           <button  className="nav-home nav-item" onClick={() => navigate("/")}>
@@ -16,6 +20,7 @@ export default function Nav () {
                   
               </Link>
           </button>
+
         </div>
     )
 }

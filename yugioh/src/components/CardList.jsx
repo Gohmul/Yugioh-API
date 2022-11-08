@@ -6,6 +6,7 @@ import axios from "axios";
 import { API_URL } from "./globals";
 import { fuzzy } from "./globals";
 import { attributes } from "./globals";
+import { random_URL } from "./globals";
 import ReactCardFlip from "react-card-flip"
 import cardBack from "../photos/yugiohcardback.png"
 
@@ -26,7 +27,7 @@ const Card = ({project}) => {
     return data, {project} ? ( 
         
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal"> 
-    <div id={data.card.id} className="CardFront"  onMouseUp={showCard} onMouseLeave={((e) => setIsFlipped((prev) => !prev))} > 
+    <div  className="CardFront"  onMouseUp={showCard} onMouseLeave={((e) => setIsFlipped((prev) => !prev))} > 
     <li className="card">
     <img className="card-img" src={project.card_images[0].image_url}></img>
     <h1 className="card-name">{project.name}</h1>
@@ -92,6 +93,7 @@ const handleAttributes = (e) => {
         }
     }
 }
+
     function showScroll () {
         return(
      <div className="scrolldown-container">
@@ -114,7 +116,7 @@ const handleAttributes = (e) => {
         return (
                     <div className="page-context">
                     <div className="search-bar">  {/*                                                                            onKeyUp={getApi} */}
-                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)}></input>
+                    <input className="search-input"placeholder="please enter a search" onChange={(e) => data.setSearch(e.target.value)} ></input>
                     <button className="search-Button"type="submit" onMouseDown={getApi} onMouseUp={((e) => data.setSearch(""))}>Search</button>
                     <select onChange={handleTypes} onSelect={((e)=> data.setTypes(e.target.value))} id={"value"} >
                     <option value="" hidden>Select a Type</option>
@@ -141,6 +143,10 @@ const handleAttributes = (e) => {
                     <option value="&attribute=earth">Earth</option>
                     <option value="&attribute=dark">Dark</option>
                     </select>
+                    </div>
+                    <div className="random">
+                    <button className="nav-random nav-item" onMouseDown={((e)=> data.getRandom()) }onMouseUp={showCard}>
+                    </button>
                     </div>
                     <div className="card-grid">
                     {

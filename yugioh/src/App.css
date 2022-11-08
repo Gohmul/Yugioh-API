@@ -80,6 +80,22 @@ a {
   justify-content: center;
   height: 3em;
 }
+.nav-random {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color:white;
+  background: url("photos/random.png");
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #C25B80;
+  border-radius: 1000px;
+  padding: 20px 45px;
+  text-align: center;
+  width: 10em;
+  justify-content: center;
+  height: 3em;
+}
 .nav-item {
   box-shadow:
   0 0 7px #675988,
@@ -397,6 +413,12 @@ a {
   transition: ease-in 1s;
   opacity: 100;
   font-size: 60px;
+}
+
+.random {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
