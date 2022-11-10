@@ -155,6 +155,8 @@ a {
   grid-template-columns: repeat(4, minmax(100px, 1fr));
   grid-gap: 5em;
   margin-top: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 .card-container {
@@ -384,8 +386,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
   color: #fff;
   font-size: x-large;
 }
@@ -412,7 +412,7 @@ a {
   background-color:#415374 ;
   transition: ease-in 1s;
   opacity: 100;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 .random {
